@@ -3,7 +3,7 @@ const arrayOfNumber = document.querySelector("#categories");
 const quantityOfElement = arrayOfNumber.children;
 console.log(`Number of categories: ${quantityOfElement.length}`);
 
-const listCategories = document.querySelectorAll(".item");
+const listCategories = arrayOfNumber.querySelectorAll(".item");
 listCategories.forEach((item) => {
   console.log("");
   console.log(`Category: ${item.firstElementChild.textContent}`);
