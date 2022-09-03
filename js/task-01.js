@@ -1,14 +1,11 @@
-const categoriesRef = document.querySelectorAll("li.item");
+const arrayOfNumber = document.querySelector("#categories");
 
-const categoriesInfo = (categoriesRef) => {
-  console.log(`Number of categories: ${categoriesRef.length}`);
+const quantityOfElement = arrayOfNumber.children;
+console.log(`Number of categories: ${quantityOfElement.length}`);
 
-  Array.from(categoriesRef).map((category) => {
-    const nameOfCategory = category.firstElementChild.textContent;
-    const elementsInCategory = category.lastElementChild.children.length;
-    console.log(`Category: ${nameOfCategory}`);
-    console.log(`Elements: ${elementsInCategory}`);
-  });
-};
-
-categoriesInfo(categoriesRef);
+const listCategories = document.querySelectorAll(".item");
+listCategories.forEach((item) => {
+  console.log("");
+  console.log(`Category: ${item.firstElementChild.textContent}`);
+  console.log(`Elements: ${item.lastElementChild.children.length}`);
+});
