@@ -3,12 +3,15 @@ const valueLength = inputRef.getAttribute("data-length");
 
 inputRef.addEventListener("blur", whenInputBlur);
 
+const changeClass = (newClass, oldClass) => {
+  inputRef.classList.add(newClass);
+  inputRef.classList.remove(oldClass);
+};
+
 function whenInputBlur(event) {
   if (event.currentTarget.value.length === Number(valueLength)) {
-    inputRef.classList.remove("invalid");
-    inputRef.classList.add("valid");
+    changeClass("valid", "invalid");
   } else {
-    inputRef.classList.remove("valid");
-    inputRef.classList.add("invalid");
+    changeClass("invalid", "valid");
   }
 }

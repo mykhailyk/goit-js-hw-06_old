@@ -8,7 +8,7 @@ function whenFormSubmit(event) {
     elements: { email, password },
   } = event.currentTarget;
 
-  if (email.value === "" || password.value === "") {
+  if (email.value.trim() === "" || password.value.trim() === "") {
     return alert("Всі поля повинні бути заповнені!");
   }
 
@@ -19,5 +19,6 @@ function whenFormSubmit(event) {
     formResult[name] = value;
   });
 
+  console.log(formResult);
   form.reset();
 }
