@@ -4,9 +4,10 @@ const refs = {
 };
 
 const whenInputActive = (active) => {
-  active.currentTarget.value === ""
+  const value = active.currentTarget.value.trim();
+  value === ""
     ? (refs.textOutput.textContent = "Anonymous")
-    : (refs.textOutput.textContent = active.currentTarget.value);
+    : (refs.textOutput.textContent = value);
 };
 
 refs.textInput.addEventListener("input", whenInputActive);
